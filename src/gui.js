@@ -2382,8 +2382,7 @@ IDE_Morph.prototype.paintNewSprite = function () {
         function (img, rc, shapes) {
             cos = createCostume(img, cosName, rc, shapes);
             aWorld.changed();
-            if (!(cos instanceof SVG_Costume))
-                cos.shrinkWrap();
+            cos.shrinkWrap();
             sprite.wearCostume(cos, true); // don't shadow
             this.hasChangedMedia = true;
             sprite.shadowAttribute('costumes');
@@ -8347,7 +8346,7 @@ CostumeIconMorph.prototype.editCostume = function () {
         cosOld.rotationCenter,
         function (img, rc, shapes) {
             cos = createCostume(img, cosName, rc, shapes);
-            if (sprite instanceof SpriteMorph && !(cos instanceof SVG_Costume)) {
+            if (sprite instanceof SpriteMorph) {
                 // don't shrinkwrap stage costumes
                 cos.shrinkWrap();
             }
@@ -8835,7 +8834,7 @@ WardrobeMorph.prototype.paintNew = function () {
             cos = createCostume(img, cosName, rc, shapes);
             aWorld.changed();
             if (anIDE) {
-                if (anIDE.currentSprite instanceof SpriteMorph && !(cos instanceof SVG_Costume)) {
+                if (anIDE.currentSprite instanceof SpriteMorph) {
                     // don't shrinkwrap stage costumes
                     cos.shrinkWrap();
                 }
