@@ -9740,6 +9740,10 @@ SVG_Costume.prototype.toString = function () {
     return 'an SVG_Costume(' + this.name + ')';
 };
 
+// SVG_Costume shrink-wrapping: nothing to do here
+
+SVG_Costume.prototype.shrinkWrap = nop;
+
 // SVG_Costume duplication
 
 SVG_Costume.prototype.copy = function () {
